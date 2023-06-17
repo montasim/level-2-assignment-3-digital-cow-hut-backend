@@ -1,16 +1,17 @@
 {
-  "name": "university-management-auth-service",
+  "name": "cow_hat",
   "version": "1.0.0",
   "description": "",
   "main": "src/server.ts",
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
-    "lint:fix": "eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts ..",
     "prettier:check": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
-    "prettier:fix": "prettier --write .",
-    "lint-prettier": "yarn lint:check && yarn prettier:check",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:fix": "eslint .. --fix",
+    "prettier:checkNotUsing": "yarn prettier --write ..",
+    "prettier:fix": "prettier --write ..",
+    "lint-prettier": "yarn lint:check && yarn prettier:check"
   },
   "author": "Mohammad Montasim -Al- Mamun Shuvo",
   "license": "ISC",
@@ -34,6 +35,10 @@
     "dotenv": "^16.1.3",
     "eslint": "^8.41.0",
     "express": "^4.18.2",
-    "mongoose": "^7.2.2"
+    "mongoose": "^7.2.2",
+    "http-status": "^1.6.2",
+    "winston": "^3.9.0",
+    "winston-daily-rotate-file": "^4.7.1",
+    "zod": "^3.21.4"
   }
 }
