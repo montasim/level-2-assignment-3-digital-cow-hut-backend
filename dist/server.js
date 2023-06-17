@@ -13,20 +13,44 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
-const index_1 = __importDefault(require("./config/index"));
 const app_1 = __importDefault(require("./app"));
-function main() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            yield mongoose_1.default.connect(index_1.default.database_url);
-            console.log('Database is connected successfully');
-            app_1.default.listen(index_1.default.port, () => {
-                console.log(`Application listening on port ${index_1.default.port}`);
+const config_1 = __importDefault(require("./config"));
+process.on('uncaughtException', error => {
+    // errorLogger.error(error);
+    console.log(error);
+    process.exit(1);
+});
+let server;
+const boostrap = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        yield mongoose_1.default.connect(config_1.default.database_url);
+        // logger.info('Database is connected successfully');
+        console.info('Database is connected successfully');
+        server = app_1.default.listen(config_1.default.port, () => 
+        // logger.info(`Server is running on port = `, config.port)
+        console.info(`Server is running on port = `, config_1.default.port));
+    }
+    catch (e) {
+        // errorLogger.error('Failed to connect database', e);
+        console.info('Failed to connect database', e);
+    }
+    process.on('unhandledRejection', error => {
+        if (server) {
+            server.close(() => {
+                // errorLogger.error(error);
+                console.info(error);
+                process.exit(1);
             });
         }
-        catch (error) {
-            console.log('Failed to connect database', error);
+        else {
+            process.exit(1);
         }
     });
-}
-main();
+});
+// process.on('SIGTERM', () => {
+//   logger.info('SIGTERM is received');
+//   // if (server) {
+//   //   server.close()
+//   // }
+// });
+boostrap();
