@@ -13,7 +13,6 @@ const validateRequest =
         params: req.params,
         cookies: req.cookies,
       });
-      console.log(req.body)
       return next();
     } catch (err) {
       next(err);
