@@ -22,8 +22,8 @@ const userSchema = new Schema<IUser>(
     income: { type: Number },
   },
   {
-    timestamps: true
-    }
+    timestamps: true,
+  }
 );
 
 // Create and export the Mongoose model
