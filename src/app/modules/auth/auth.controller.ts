@@ -1,6 +1,6 @@
-import {Request, Response} from "express";
-import sendResponse from "../../../shared/sendResponse";
-import {UserService} from "../user/user.service";
+import { Request, Response } from 'express';
+import sendResponse from '../../../shared/sendResponse';
+import { UserService } from '../user/user.service';
 
 const createUser = async (req: Request, res: Response) => {
   const user = req.body;
@@ -12,8 +12,8 @@ const createUser = async (req: Request, res: Response) => {
     message: 'User Created Successfully',
     data: result,
   });
-}
+};
 
 export const AuthController = {
   createUser,
-}
+};
