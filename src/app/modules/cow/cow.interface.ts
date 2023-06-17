@@ -1,4 +1,4 @@
-import {Model, Types} from 'mongoose';
+import { Model, Types } from 'mongoose';
 
 export type ICow = {
   name: string;
@@ -32,5 +32,8 @@ export type ICowBreadConstant =
 
 export type ICowLabelConstant = 'for sale' | 'sold out';
 export type ICowCategoryConstant = 'Dairy' | 'Beef' | 'Dual Purpose';
+export type ICowFilters = {
+  searchTerm?: string;
+};
 
 export type ICowModel = Model<ICow, Record<string, unknown>>;
