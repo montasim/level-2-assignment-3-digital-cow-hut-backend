@@ -19,7 +19,7 @@ const createUser: RequestHandler = catchAsync(
 );
 
 const getUsers: RequestHandler = catchAsync(
-  async (req: Request, res: Response)=> {
+  async (req: Request, res: Response) => {
     const allUsers = await UserService.getAllUsers();
 
     sendResponse(res, {
@@ -29,7 +29,7 @@ const getUsers: RequestHandler = catchAsync(
       data: allUsers,
     });
   }
-)
+);
 
 const getUser: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
@@ -41,7 +41,7 @@ const getUser: RequestHandler = catchAsync(
       success: true,
       message: 'Retrieved user',
       data: user,
-    })
+    });
   }
 );
 
@@ -50,7 +50,10 @@ const updateUser: RequestHandler = catchAsync(
     const userId: string = req.params.id;
     const updatedUserData = req.body;
 
-    const updatedUser = await UserService.updateUserData(userId, updatedUserData);
+    const updatedUser = await UserService.updateUserData(
+      userId,
+      updatedUserData
+    );
 
     sendResponse(res, {
       statusCode: 200,
@@ -59,35 +62,35 @@ const updateUser: RequestHandler = catchAsync(
       data: updatedUser,
     });
   }
-)
+);
 
 const deleteUser: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
     const userId = req.params.id;
     const result = await UserService.deleteUser(userId);
 
-    if(!result) {
+    if (!result) {
       sendResponse(res, {
         statusCode: 200,
         success: true,
         message: 'Can not find user with this id',
-        data: result
-      })
+        data: result,
+      });
     }
 
     sendResponse(res, {
       statusCode: 200,
       success: true,
       message: 'User deleted successfully',
-      data: result
-    })
+      data: result,
+    });
   }
-)
+);
 
 export const UserController = {
   createUser,
   getUsers,
   getUser,
   updateUser,
-  deleteUser
+  deleteUser,
 };
