@@ -67,7 +67,7 @@ Error Response Object Should include the following properties:
   "password":"abrakadabra",
   "role": "buyer",
    "name":{
-      "firstName": "Mr. Babull"
+      "firstName": "Mr. Babull",
       "lastName": "Bro"
     },
   "phoneNumber":"01711111111",
@@ -75,7 +75,7 @@ Error Response Object Should include the following properties:
   "budget":70000,
   "income":0,
   "createdAt":"",
-  "updatedAt":"",
+  "updatedAt":""
 }
 ```
 
@@ -86,7 +86,7 @@ Error Response Object Should include the following properties:
   "password":"abrakadabra",
   "role": "seller",
    "name":{
-      "firstName": "Mr. Babull"
+      "firstName": "Mr. Babull",
       "lastName": "Bro"
     },
   "phoneNumber":"01711111111",
@@ -94,7 +94,7 @@ Error Response Object Should include the following properties:
   "budget":0,
   "income":0,
   "createdAt":"",
-  "updatedAt":"",
+  "updatedAt":""
 }
 ```
 
@@ -184,7 +184,7 @@ Response Sample Pattern:
       "success": true, 
       "statusCode":200,
       "message": "Users created successfully",
-      "data": {}, 
+      "data": {}
   }
 ```
 
@@ -204,7 +204,7 @@ Response Sample Pattern:
       "success": true, 
       "statusCode":200,
       "message": "Users retrieved successfully",
-      "data": [{},{}], 
+      "data": [{},{}]
   }
 ```
 
@@ -224,7 +224,7 @@ Response Sample Pattern:
       "success": true, 
       "statusCode":200,
       "message": "User retrieved successfully",
-      "data": {}, 
+      "data": {}
   }
   ```
 
@@ -243,7 +243,7 @@ Response Sample Pattern:
       "success": true, 
       "statusCode":200,
       "message": "User updated successfully",
-      "data": {}, 
+      "data": {}
   }
   ```
 
@@ -262,7 +262,7 @@ Response Sample Pattern:
       "success": true, 
       "statusCode":200,
       "message": "Uers deleted successfully",
-      "data": {}, 
+      "data": {}
   }
 ```
 
@@ -298,7 +298,7 @@ Response Sample Pattern:
       "success": true, 
       "statusCode":200,
       "message": "Cow created successfully",
-      "data": {}, 
+      "data": {}
   }
 ```
 
@@ -321,8 +321,8 @@ Response Sample Pattern:
         "page": 3,
         "limit": 10,
         "count":1050
-        }
-      "data": [{},{}] , 
+        },
+      "data": [{},{}] 
   }
   ```
 
@@ -351,9 +351,9 @@ Response Sample Pattern:
       "message": "Cows retrieved successfully",
       "meta": {
         "page": 3,
-        "limit": 10,
-        }
-      "data": [{},{}], 
+        "limit": 10
+        },
+      "data": [{},{}]
   }
 ```
 
@@ -373,7 +373,7 @@ Response Sample Pattern:
       "success": true, 
       "statusCode":200,
       "message": "Cow retrieved successfully",
-      "data": {}, 
+      "data": {}
   }
 ```
 
@@ -393,7 +393,7 @@ Response Sample Pattern:
       "success": true, 
       "statusCode":200,
       "message": "Cow updated successfully",
-      "data": {}, 
+      "data": {}
   }
 
 ```  
@@ -412,7 +412,7 @@ Response Sample Pattern:
       "success": true, 
       "statusCode":200,
       "message": "Cow deleted successfully",
-      "data": {}, 
+      "data": {}
   }
 ```
 
@@ -465,7 +465,7 @@ Response Sample Pattern:
       "success": true, 
       "statusCode":200,
       "message": "Orders retrieved successfully",
-      "data": {}, 
+      "data": {}
   }
 ```
 
