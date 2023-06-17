@@ -15,7 +15,7 @@ app.use('/api/v1', router);
 
 //test route
 app.get('/', (req, res, next) => {
-  res.status(200).json({ success: 'true', message: 'Test app route working' });
+  res.status(200).json({ success: 'true', message: 'Test route working' });
 });
 
 //global error handler
